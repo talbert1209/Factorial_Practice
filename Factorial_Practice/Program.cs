@@ -10,12 +10,34 @@ namespace Factorial_Practice
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            for (int i = 0; i < 20; i++)
+            {
+                Console.WriteLine($"The factorial of {i} is... {GetFactorial(i)}");
+                Console.WriteLine($"The factorial of {i} is... {GetFactorialEasy(i)}");
+            }
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+        }
+
+        private static long GetFactorial(int n)
+        {
+            if (n == 0)
+                return 1;
+            var multiplyBy = GetFactorial(n - 1);
+            return n * multiplyBy;
+        }
+
+        private static long GetFactorialEasy(int n)
+        {
+            long x = 1;
+            long total = 1;
+            while (x <= n)
+            {
+                total *= x;
+
+                x++;
+            }
+
+            return total;
         }
     }
 }
