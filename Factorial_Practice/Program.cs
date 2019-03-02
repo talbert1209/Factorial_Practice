@@ -33,7 +33,6 @@ namespace Factorial_Practice
             while (x <= n)
             {
                 total *= x;
-
                 x++;
             }
 
